@@ -1,13 +1,13 @@
 import requests
 
 def main():
-    proxy = '164.100.130.128:8080'
+    proxy = '82.202.160.205:8118'
     proxies={
         'http': proxy,
         'https': proxy
     }
-    request = requests.get('',proxies=proxies,timeout={})
-    print(request.json())
+    request = requests.get('https://httpbin.org/ip',proxies=proxies,timeout=3)
+    print(request.status_code)
 
 
 if __name__ == '__main__':
