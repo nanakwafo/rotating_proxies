@@ -6,8 +6,13 @@ def main():
         'http': proxy,
         'https': proxy
     }
-    request = requests.get('https://httpbin.org/ip',proxies=proxies,timeout=3)
-    print(request.status_code)
+    try:
+        request = requests.get('https://httpbin.org/ip',proxies=proxies,timeout=3)
+        print(request.status_code)
+    except:
+        print("An Exceptional Error Occured")
+    else:
+        print("Everything worked well")
 
 
 if __name__ == '__main__':
